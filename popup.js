@@ -8,6 +8,11 @@ function entry() {
     chrome.storage.sync.get(['subjects', 'isEnabled'], function (result) {
         enableToggle.checked = result.isEnabled;
 
+        if (result.subjects === undefined) {
+            chrome.storage.sync.set({ subjects: [] }, entry)
+            return;
+        }
+
         subjects = Array.from(result.subjects);
         for (let i = 0; i < subjects.length; i++) {
             createInput(subjects[i], (event) => {
