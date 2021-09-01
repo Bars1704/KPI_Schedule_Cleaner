@@ -2,7 +2,9 @@
 Данное расширение создано для очистки rozklad.kpi.ua от ненужных выборных предметов
 
 # Установка и настройка
-//TODO: добавить ссылку на магазин расширений как только расширение будет опубликовано
+Ссылка на установщик - 
+https://chrome.google.com/webstore/detail/kpi-scedule-fixer/eghemfbcldijcjjhfocnaplahkpkaflh?hl=ru&
+
 
 1) Скачиваем репозиторий
 2) Заходим на chrome://extensions/
