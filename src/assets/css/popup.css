@@ -1,51 +1,51 @@
 html,
 body {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    margin: 0;
-    min-height: 180px;
-    padding: 0;
-    width: 380px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  margin: 0;
+  min-height: 180px;
+  padding: 0;
+  width: 380px;
 }
 
 h5 {
-    font-family: 'Menlo', monospace;
-    font-weight: 400;
-    margin: 0;
-    color: #2f5876;
-    font-size: 1.3rem!important;
+  font-family: 'Menlo', monospace;
+  font-weight: 400;
+  margin: 0;
+  color: #2f5876;
+  font-size: 1.3rem!important;
 }
 
 a:link,
 a:visited {
-    color: #000000;
-    outline: 0;
-    text-decoration: none;
+  color: #000000;
+  outline: 0;
+  text-decoration: none;
 }
 
 img {
-    width: 30px;
+  width: 30px;
 }
 
 .modal-header {
-    align-items: center;
-    border-bottom: 1px solid #dadada;
-    height: 50px;
+  align-items: center;
+  border-bottom: 1px solid #dadada;
+  height: 50px;
 }
 
 .modal-content {
-    padding: 22px 22px;
+  padding: 22px 22px;
 }
 
 .logo {
-    padding: 14px;
+  padding: 14px;
 }
 
 .inputField {
-    width: 100%;
-    margin: 3px 0;
+  width: 100%;
+  margin: 3px 0;
 }
 
 .check-box {
-    margin: 0 22px;
+  margin: 0 22px;
 }
