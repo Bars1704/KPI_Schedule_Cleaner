@@ -1,25 +1,30 @@
 {
-	"manifest_version": 3,
-	"version": "1.1",
-	"name": "KPI schedule fixer",
-	"description": "The extension is designed to fix KPI elective subjects problem by cleaning the schedule from unused subjects",
-	"content_scripts": [
-		{
-			"matches": [ "*://*.rozklad.kpi.ua/*", "*://*.roz.kpi.ua/*" ],
-			"js": ["src/scripts/fixer.js"],
-			"run_at": "document_end"
-		}
-	],
-	"permissions": [
-		"storage"
-	  ],
-	"icons" : {
-		"16" : "src/assets/img/icon-16.png",
-		"128" : "src/assets/img/icon-128.png"
-	},	
-    "action": {
-		"default_title": "KPI Schedule fixer",
-		"default_icon" : "src/assets/img/icon-128.png",
-		"default_popup": "src/index.html"
-	}
+  "manifest_version": 3,
+  "version": "1.1",
+  "name": "KPI schedule fixer",
+  "description": "The extension is designed to fix KPI elective subjects problem by cleaning the schedule from unused subjects",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.rozklad.kpi.ua/*",
+        "*://*.epi.kpi.ua/*"
+      ],
+      "js": [
+        "src/scripts/fixer.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "storage"
+  ],
+  "icons": {
+    "16": "src/assets/img/icon-16.png",
+    "128": "src/assets/img/icon-128.png"
+  },
+  "action": {
+    "default_title": "KPI Schedule fixer",
+    "default_icon": "src/assets/img/icon-128.png",
+    "default_popup": "src/index.html"
+  }
 }
