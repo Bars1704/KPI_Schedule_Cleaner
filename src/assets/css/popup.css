@@ -8,12 +8,12 @@ body {
     width: 380px;
 }
 
-h1 {
+h5 {
     font-family: 'Menlo', monospace;
-    font-size: 22px;
     font-weight: 400;
     margin: 0;
     color: #2f5876;
+    font-size: 1.3rem!important;
 }
 
 a:link,
@@ -29,7 +29,7 @@ img {
 
 .modal-header {
     align-items: center;
-    border-bottom: 0.5px solid #dadada;
+    border-bottom: 1px solid #dadada;
     height: 50px;
 }
 
@@ -38,14 +38,14 @@ img {
 }
 
 .logo {
-    padding: 16px;
+    padding: 14px;
 }
 
 .inputField {
     width: 100%;
-    margin: 3px 0px;
+    margin: 3px 0;
 }
 
-.checkBox {
-    margin: 0px 22px;
+.check-box {
+    margin: 0 22px;
 }
