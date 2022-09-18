@@ -1,38 +1,44 @@
-window.onload = entry;
+/**
+ * Extension DOM world
+ */
 
-let subjects;
+window.addEventListener('load', main);
 
-function entry() {
+async function main() {
+    let subjects;
+
     console.log('[index] Entry has been called');
     console.log('[index], inputs root', inputsRoot);
 
     removeAllChildren(inputsRoot)
-    chrome.storage.sync.get(['subjects', 'isEnabled'], function (result) {
-        console.log('[index] Storage get has been called', result, enableToggle);
+    const state = await chrome.storage.sync.get(['subjects', 'isEnabled']);
 
-        enableToggle.checked = result.isEnabled;
+    console.log('[index] Storage get has been called', state, enableToggle);
 
-        if (result.subjects === undefined) {
-            chrome.storage.sync.set({ subjects: [] }, entry)
-            return;
-        }
+    enableToggle.checked = state.isEnabled;
 
-        subjects = Array.from(result.subjects);
-        for (let i = 0; i < subjects.length; i++) {
-            createInput(subjects[i], (event) => {
-                const value = event.target.value;
-                if (value === "") {
-                    subjects.splice(i, 1);
-                } else {
-                    subjects[i] = value;
-                }
-                chrome.storage.sync.set({ subjects: subjects }, entry);
-            })
-        }
-        createInput("", (event) => {
-            subjects.push(event.target.value);
-            chrome.storage.sync.set({ subjects: subjects }, entry);
-        });
+    if (state.subjects === undefined) {
+        await chrome.storage.sync.set({ subjects: [] })
+        return;
+    }
+
+    subjects = Array.from(state.subjects);
+    for (let i = 0; i < subjects.length; i++) {
+        createInput(subjects[i], async (event) => {
+            const value = event.target.value;
+            console.log('[index]: value', value);
+
+            if (value?.trim() === "") {
+                subjects.splice(i, 1);
+            } else {
+                subjects[i] = value;
+            }
+            await chrome.storage.sync.set({ subjects: subjects });
+        })
+    }
+    createInput("", async (event) => {
+        subjects.push(event.target.value);
+        await chrome.storage.sync.set({ subjects: subjects }, main);
     });
 
     enableToggle.onclick = async () => {
@@ -58,5 +64,3 @@ function createInput(inputValue, onChange) {
     input.placeholder = 'Мой предмет';
     inputsRoot.appendChild(input)
 }
-
-

@@ -6,17 +6,30 @@
   "content_scripts": [
     {
       "matches": [
-        "*://*.rozklad.kpi.ua/*",
         "*://*.epi.kpi.ua/*"
       ],
       "js": [
-        "src/scripts/fixer.js"
+        "src/scripts/content/oldScheduleFixer.js"
       ],
-      "run_at": "document_end"
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "*://*.schedule.kpi.ua/*"
+      ],
+      "js": [
+        "src/scripts/content/newScheduleFixer.js"
+      ],
+      "run_at": "document_start"
     }
   ],
   "permissions": [
-    "storage"
+    "storage",
+    "webRequest",
+    "tabs"
+  ],
+  "host_permissions": [
+    "*://*.schedule.kpi.ua/*"
   ],
   "icons": {
     "16": "src/assets/img/icon-16.png",
@@ -26,5 +39,8 @@
     "default_title": "KPI Schedule fixer",
     "default_icon": "src/assets/img/icon-128.png",
     "default_popup": "src/index.html"
+  },
+  "background": {
+    "service_worker": "src/scripts/background.js"
   }
 }

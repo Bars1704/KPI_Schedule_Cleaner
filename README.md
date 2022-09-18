@@ -29,3 +29,6 @@ yarn run build # создаст папку dist, она нам и понадоб
 
       ![image](https://user-images.githubusercontent.com/33464332/131473415-b7d9cbba-c26f-4993-95e9-bf4cac448e76.png)
 
+Useful info:
+- https://stackoverflow.com/a/18316107/12018208
+- https://stackoverflow.com/a/9517879/12018208
