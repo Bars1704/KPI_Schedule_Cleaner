@@ -1,6 +1,8 @@
 let whitelist = [];
 
 async function main() {
+    await chrome.runtime.sendMessage({ event: 'New Schedule Opened', description: 'none' });
+
     const state = await chrome.storage.sync.get(['subjects', 'isEnabled']);
 
     if (!state.isEnabled) {

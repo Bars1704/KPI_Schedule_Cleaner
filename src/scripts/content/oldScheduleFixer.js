@@ -9,6 +9,7 @@ let whiteList = []
  * @returns {Promise<void>}
  */
 async function main() {
+    await chrome.runtime.sendMessage({ event: 'Old Schedule Opened', description: 'none' });
     const host = window.location.host;
 
     // console.log('[fixer] Document state: ', document.readyState);

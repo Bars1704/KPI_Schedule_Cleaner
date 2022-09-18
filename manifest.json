@@ -26,7 +26,9 @@
   "permissions": [
     "storage",
     "webRequest",
-    "tabs"
+    "tabs",
+    "identity",
+    "identity.email"
   ],
   "host_permissions": [
     "*://*.schedule.kpi.ua/*"
